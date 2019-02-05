@@ -40,12 +40,12 @@ export class AppComponent implements OnInit {
     @ViewChild(MatSort) sort: MatSort;
 
     //   Form field with error messages
-    name = new FormControl('', [Validators.required]);
-
-    age = new FormControl('', [Validators.required]);
-
-    email = new FormControl('', [Validators.required, Validators.email]);
-    surnameFormControl = new FormControl('', [Validators.required]);
+    unitname = new FormControl('', [Validators.required]);
+    mtm = new FormControl('', [Validators.required]);
+    recoveryName = new FormControl('', [Validators.required]);
+    os = new FormControl('', [Validators.required]);
+    mediaTypes = new FormControl('', [Validators.required]);
+    location = new FormControl('', [Validators.required]);
 
     ngOnInit() {
         this.loadUsers();
@@ -157,15 +157,9 @@ export class AppComponent implements OnInit {
     }
 
     getErrorMessage() {
-        return this.name.hasError('required') ? 'You must enter a value' :
-            this.name.hasError('name') ? 'Not a valid name' : '';
+        return this.unitname.hasError('required') ? 'You must enter a value' :
+            this.unitname.hasError('unitname') ? 'Not a valid unitname' : '';
     }
-    emailGetErrorMessage() {
-        return this.email.hasError('required') ? 'You must enter a value' :
-            this.email.hasError('email') ? 'Not a valid email' :
-                '';
-    }
-
     onSubmit(newUser: User) {
         this.newUser = new User(0, '', '', '', '', '', '');
     }

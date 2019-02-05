@@ -16,8 +16,8 @@
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
                 <mat-form-field floatLabel="never">
-                    <input [value]="element.unitname" [(ngModel)]="element.unitname" matInput placeholder="Enter your name" [formControl]="name" required>
-                    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+                    <input [value]="element.unitname" [(ngModel)]="element.unitname" matInput placeholder="Enter your name" [formControl]="unitname" required>
+                    <mat-error *ngIf="unitname.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </td>
         </ng-container>
@@ -27,8 +27,8 @@
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
                 <mat-form-field floatLabel="never">
-                    <input matInput placeholder="mtm" [value]="element.mtm" [(ngModel)]="element.mtm" required [formControl]="surnameFormControl">
-                    <mat-error *ngIf="surnameFormControl.invalid">{{getErrorMessage()}}</mat-error>
+                    <input matInput placeholder="mtm" [value]="element.mtm" [(ngModel)]="element.mtm" required [formControl]="mtm">
+                    <mat-error *ngIf="mtm.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </td>
         </ng-container>
@@ -38,8 +38,8 @@
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
                 <mat-form-field floatLabel="never">
-                    <input type="number" matInput placeholder="recoveryName" [value]="element.recoveryName" [(ngModel)]="element.recoveryName" [formControl]="age" required>
-                    <mat-error *ngIf="age.invalid">{{getErrorMessage()}}</mat-error>
+                    <input  matInput placeholder="recoveryName" [value]="element.recoveryName" [(ngModel)]="element.recoveryName" [formControl]="recoveryName" required>
+                    <mat-error *ngIf="recoveryName.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </td>
         </ng-container>
@@ -49,9 +49,9 @@
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
                 <mat-form-field floatLabel="never">
-                    <input [value]="element.os" [(ngModel)]="element.os" matInput placeholder="Enter your os" [formControl]="email"
+                    <input [value]="element.os" [(ngModel)]="element.os" matInput placeholder="Enter your os" [formControl]="os"
                         required>
-                    <mat-error *ngIf="email.invalid">{{emailGetErrorMessage()}}</mat-error>
+                    <mat-error *ngIf="os.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </td>
         </ng-container>
@@ -61,8 +61,8 @@
                     <th mat-header-cell *matHeaderCellDef> </th>
                     <td mat-cell *matCellDef="let element">
                         <mat-form-field floatLabel="never">
-                            <input type="number" matInput placeholder="mediaTypes" [value]="element.mediaTypes" [(ngModel)]="element.recoveryName" [formControl]="age" required>
-                            <mat-error *ngIf="age.invalid">{{getErrorMessage()}}</mat-error>
+                            <input matInput placeholder="mediaTypes" [value]="element.mediaTypes" [(ngModel)]="element.mediaTypes" [formControl]="mediaTypes" required>
+                            <mat-error *ngIf="mediaTypes.invalid">{{getErrorMessage()}}</mat-error>
                         </mat-form-field>
                     </td>
                 </ng-container>
@@ -72,8 +72,8 @@
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
                 <mat-form-field floatLabel="never">
-                    <input type="number" matInput placeholder="location" [value]="element.location" [(ngModel)]="element.recoveryName" [formControl]="age" required>
-                    <mat-error *ngIf="age.invalid">{{getErrorMessage()}}</mat-error>
+                    <input  matInput placeholder="location" [value]="element.location" [(ngModel)]="element.location" [formControl]="location" required>
+                    <mat-error *ngIf="location.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </td>
         </ng-container>
@@ -82,7 +82,7 @@
         <ng-container matColumnDef="Save">
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
-                <button mat-raised-button (click)="saveUser(element)"  [disabled]="name.invalid || email.invalid || surnameFormControl.invalid || age.invalid"> <mat-icon color="accent">save</mat-icon>
+                <button mat-raised-button (click)="saveUser(element)"  [disabled]="unitname.invalid || mtm.invalid || recoveryName.invalid || os.invalid || mediaTypes.invalid || location.invalid "> <mat-icon color="accent">save</mat-icon>
                     Save </button>
             </td>
         </ng-container>
@@ -141,7 +141,7 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> recoveryName </th>
             <td mat-cell *matCellDef="let element">
                 <mat-form-field floatLabel="never">
-                    <input type="number" matInput placeholder="recoveryName" [value]="element.recoveryName" [(ngModel)]="element.recoveryName" >
+                    <input  matInput placeholder="recoveryName" [value]="element.recoveryName" [(ngModel)]="element.recoveryName" >
                
                 </mat-form-field>
             </td>

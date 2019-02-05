@@ -23,8 +23,11 @@ export class UserService {
     }
     updateUser(id: number, user: User) {
         const urlParams = new HttpParams().set('id', id.toString());
-        return this.http.post(this.url, user);
+        return this.http.put(this.url + id, user);
     }
+
+
+
     deleteUser(id: number) {
         const urlParams = new HttpParams().set('id', id.toString());
         return this.http.delete(this.url + id);
